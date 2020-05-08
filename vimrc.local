@@ -1,11 +1,11 @@
 set nocompatible
 syntax on
+
 set shortmess+=I
 set background=dark
 colorscheme darkblue
 
-Plugin 'vbundles/nerdtree'
-
+"Sets the left hand column to show you the line# and the rel#
 set number
 set relativenumber
 
@@ -19,3 +19,6 @@ set incsearch
 
 set noerrorbells visualbell t_vb=
 
+execute pathogen#infect()
+
+map ` :NERDTreeToggle <cr>
