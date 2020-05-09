@@ -3,7 +3,7 @@ syntax on
 
 set shortmess+=I
 set background=dark
-colorscheme darkblue
+colorscheme peachpuff
 
 "Sets the left hand column to show you the line# and the rel#
 set number
