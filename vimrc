@@ -19,8 +19,15 @@ set incsearch
 
 set noerrorbells visualbell t_vb=
 
+map ` :NERDTreeToggle <cr>
+
 "Vim 8 allows for adding packages in the ~/.vim/pack/vendor/start/ directory that will be loaded when vim is loaded.
 
-"======================== Install NerdTree by cloning the repo =================================="
-"git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
-map ` :NERDTreeToggle <cr>
+"======================== Install Plugins by cloning then running the following commands =================================="
+
+" git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
+" git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe"
+
+" git clone https://github.com/Valloric/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe"
+" cd ~/.vim/pack/plugins/opt/YouCompleteMe && git submodule update --init --recursive && ./install.py --all
+packadd YouCompleteMe
