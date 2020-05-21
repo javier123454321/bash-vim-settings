@@ -6,7 +6,7 @@ set background=dark
 colorscheme peachpuff
 
 "Sets the left hand column to show you the line# and the rel#
-set number
+"set number
 set relativenumber
 
 set laststatus=2
