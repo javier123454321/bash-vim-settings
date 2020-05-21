@@ -8,7 +8,8 @@ colorscheme peachpuff
 "Sets the left hand column to show you the line# and the rel#
 "set number
 set relativenumber
-
+	
+set tabstop=4
 set laststatus=2
 set backspace=indent,eol,start
 set hidden
