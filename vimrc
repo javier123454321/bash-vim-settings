@@ -58,4 +58,4 @@ map ` :NERDTreeToggle <cr>
 " git clone https://github.com/Valloric/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe"
 " cd ~/.vim/pack/plugins/opt/YouCompleteMe && git submodule update --init --recursive && ./install.py --all
 set encoding=utf-8
-packadd YouCompleteMe
+"packadd YouCompleteMe
