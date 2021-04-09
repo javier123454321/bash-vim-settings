@@ -5,14 +5,18 @@ syntax on
 
 "set shortmess+=I
 set background=dark
-colorscheme peachpuff
+colorscheme synthwave
 
 "Sets the left hand column to show you the line# and the rel#
 set number
 set relativenumber
 
 "Sets the tabs
-set tabstop=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+
 set backspace=indent,eol,start
 set autoindent
 
@@ -29,7 +33,9 @@ set incsearch
 set smartcase
 set incsearch
 
-set textwidth=73
+"Cursor = | for insert otherwise block
+let &t_SI .= "\e[6 q"
+let &t_EI .= "\e[2 q"
 
 "Viminfo buffer is how cut and paste persists accross files, which can truncate yanks
 set viminfo='20,<1000,s1000
@@ -57,5 +63,7 @@ map ` :NERDTreeToggle <cr>
 
 " git clone https://github.com/Valloric/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe"
 " cd ~/.vim/pack/plugins/opt/YouCompleteMe && git submodule update --init --recursive && ./install.py --all
+" git clone https://github.com/TroyFletcher/vim-colors-synthwave.git ~/.vim/color && mv ~/.vim/color/colors/* ~/.vim/colors/ && rm -rf ~/.vim/color
+ 
 set encoding=utf-8
-"packadd YouCompleteMe
+packadd YouCompleteMe

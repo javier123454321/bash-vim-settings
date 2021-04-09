@@ -75,19 +75,20 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    #alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
 fi
+
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
+alias ls="ls -G"
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -118,9 +119,23 @@ fi
 
 neofetch
 
+
+#show git branch on prompt
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
 set -o vi
 alias source.='source ~/.bashrc'
 alias sredo='sudo !!'
-alias list='ls -alFh'
-export PS1="\n\[\033[38;5;11m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\n\[\033[38;5;11m\]\\$\[$(tput sgr0)\] "
+export PS1="\n\[\033[38;5;11m\]\u\[$(tput sgr0)\]@\h \[$(tput sgr0)\]\[\033[38;5;6m\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\e[32m\]\$(parse_git_branch)\n\[\033[38;5;11m\]\\$\[$(tput sgr0)\] "
 alias v='vim .'
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
+
+alias gitgraph='git log --graph --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s" --date=short'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
