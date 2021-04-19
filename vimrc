@@ -17,6 +17,9 @@ set softtabstop=2
 set shiftwidth=2
 set expandtab
 
+"share clipboard with the OS (yanks can be pasted with cmd + v)
+set clipboard=unnamed
+
 set backspace=indent,eol,start
 set autoindent
 
