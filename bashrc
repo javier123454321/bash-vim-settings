@@ -120,6 +120,15 @@ fi
 neofetch
 
 
+alias pip=pip3
+alias py=python3
+
+#needs fuzzy finder enabled
+#brew install fzf
+vimf() {
+  vim $(fzf)
+    }
+
 #show git branch on prompt
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
