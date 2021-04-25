@@ -1,5 +1,6 @@
 let skip_defaults_vim=1
 
+
 set nocompatible
 syntax on
 
@@ -27,7 +28,20 @@ set autoindent
 set scrolloff=7
 
 " Makes the set list command easier to understand.
-"set listchars=tab:→\ ,eol:↲,nbsp:␣,space:·,trail:·,extends:⟩,precedes:⟨
+set listchars=tab:→\ ,eol:↲,nbsp:␣,space:·,trail:·,extends:⟩,precedes:⟨
+
+" Map to commonly mistyped words
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
+
+"Use ctrl+s to save even in insert mode
+noremap <C-S> :update<CR>
+inoremap <C-S> <C-O>:update<CR>
+"Use ctrl+s to save in visual mode without removing selection
+vnoremap <C-S> <C-C>:update<CR>gv
+
 
 " keep search items highlited when in normal mode
 " use :noh to turn highlighting off, and press n to highlight again
@@ -67,6 +81,10 @@ map ` :NERDTreeToggle <cr>
 " git clone https://github.com/Valloric/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe"
 " cd ~/.vim/pack/plugins/opt/YouCompleteMe && git submodule update --init --recursive && ./install.py --all
 " git clone https://github.com/TroyFletcher/vim-colors-synthwave.git ~/.vim/color && mv ~/.vim/color/colors/* ~/.vim/colors/ && rm -rf ~/.vim/color
+" If installed using Homebrew
+" Install Fuzzy file finder for mac 
+" brew install fzf
+set rtp+=/usr/local/opt/fzf
  
 set encoding=utf-8
 packadd YouCompleteMe
