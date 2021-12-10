@@ -1,6 +1,5 @@
 let skip_defaults_vim=1
 
-
 set nocompatible
 syntax on
 
@@ -19,10 +18,13 @@ set shiftwidth=2
 set expandtab
 
 "share clipboard with the OS (yanks can be pasted with cmd + v)
-set clipboard=unnamed
+"set clipboard=unnamed
 
 set backspace=indent,eol,start
-set autoindent
+"autoindent makes a newline begin at the height of the previous tab
+"set autoindent
+"paste removes autoindent mode for the clipboard
+set paste
 
 "Scrolloff is the number of lines to buffer from the top or bottom when scrolling
 set scrolloff=7
@@ -84,7 +86,4 @@ map ` :NERDTreeToggle <cr>
 " If installed using Homebrew
 " Install Fuzzy file finder for mac 
 " brew install fzf
-set rtp+=/usr/local/opt/fzf
- 
 set encoding=utf-8
-packadd YouCompleteMe
