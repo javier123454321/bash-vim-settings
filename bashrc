@@ -142,6 +142,19 @@ alias v='vim .'
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
 
+srch() {
+  local target_dir
+  if [ $# -eq 1 ]; then
+    target_dir=$PWD
+  elif [ $# -eq 2 ]; then
+    target_dir=$2
+  fi
+
+  echo "grep -Rn --color=auto --exclude-dir={.*,node_modules,bin,dist,css,qa-build,build,nginx-env,shop/frags,coverage} '$1' $target_dir;"
+  echo "searching for string '$1' in $target_dir";
+  grep -Rn --color=auto --exclude-dir={.*,node_modules,bin,dist,css,qa-build,build,nginx-env,shop/frags,coverage} "$1" $target_dir;
+}
+
 alias gitgraph='git log --graph --pretty="%C(Yellow)%h  %C(reset)%ad (%C(Green)%cr%C(reset))%x09 %C(Cyan)%an: %C(reset)%s" --date=short'
 
 export NVM_DIR="$HOME/.nvm"
