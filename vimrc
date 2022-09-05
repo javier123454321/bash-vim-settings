@@ -80,8 +80,8 @@ map ` :NERDTreeToggle <cr>
 " git clone https://github.com/preservim/nerdtree.git ~/.vim/pack/vendor/start/nerdtree
 " git clone git://github.com/ajh17/VimCompletesMe.git ~/.vim/pack/vendor/start/VimCompletesMe"
 
-" git clone https://github.com/Valloric/YouCompleteMe ~/.vim/pack/plugins/opt/YouCompleteMe"
-" cd ~/.vim/pack/plugins/opt/YouCompleteMe && git submodule update --init --recursive && ./install.py --all
+" git clone https://github.com/Valloric/YouCompleteMe ~/.vim/pack/vendor/start/YouCompleteMe"
+" cd ~/.vim/pack/vendor/start/YouCompleteMe && git submodule update --init --recursive && ./install.py --all
 " git clone https://github.com/TroyFletcher/vim-colors-synthwave.git ~/.vim/color && mv ~/.vim/color/colors/* ~/.vim/colors/ && rm -rf ~/.vim/color
 " If installed using Homebrew
 " Install Fuzzy file finder for mac 
