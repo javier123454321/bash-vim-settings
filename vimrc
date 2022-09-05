@@ -85,5 +85,8 @@ map ` :NERDTreeToggle <cr>
 " git clone https://github.com/TroyFletcher/vim-colors-synthwave.git ~/.vim/color && mv ~/.vim/color/colors/* ~/.vim/colors/ && rm -rf ~/.vim/color
 " If installed using Homebrew
 " Install Fuzzy file finder for mac 
-" brew install fzf
+"brew install fzf
+set rtp+=/usr/local/opt/fzf
+" ----------- linting --------------
+" git clone --depth 1 https://github.com/dense-analysis/ale.git ~/.vim/pack/git-plugins/start/ale
 set encoding=utf-8
